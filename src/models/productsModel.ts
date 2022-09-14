@@ -12,6 +12,7 @@ const create = async (product: IProduct): Promise<ResultSetHeader> => {
   const values = [name, amount];
 
   const [result] = await connection.execute<ResultSetHeader>(query, values);
+  // console.log('<><><><><><<>< RESULT - ', result);
   // const { insertId: id } = result;
 
   // const newProduct: Product = { ...product, id };
@@ -19,6 +20,13 @@ const create = async (product: IProduct): Promise<ResultSetHeader> => {
   return result;
 };
 
-const productsModel = { create };
+const findAll = async (): Promise<ResultSetHeader> => {
+  const query = 'SELECT * from Trybesmith.Products';
+  const [result] = await connection.execute<ResultSetHeader>(query);
+  // console.log('<><><><><><<>< RESULT - ', result);
+  return result;
+};
+
+const productsModel = { create, findAll };
 
 export default productsModel;

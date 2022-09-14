@@ -14,10 +14,14 @@ const create = async (product: IProduct) => {
   }
   const { insertId } = await productsModel.create(product);
   const newProduct = { ...product, id: insertId };
-
   return newProduct;
 };
 
-const productsService = { create };
+const findAll = async () => {
+  const products = await productsModel.findAll();
+  return products;
+};
+
+const productsService = { create, findAll };
 
 export default productsService;

@@ -11,9 +11,7 @@ const JWT_CONFIG: SignOptions = {
 const tokenGenerator = (req: Request, res: Response, next: NextFunction) => {
   const { username, classe } = req.body as IUser;
   const token = jwt.sign({ username, classe }, JWT_SECRET, JWT_CONFIG);
-  // console.log('<><><><><><>>>>> TOKEN - ', token);
   req.headers.authorization = token;
-  // console.log('<><><><><><>>>>> HEADERS AUTHORIZATION - ', req.headers.authorization);
   next();
 };
 

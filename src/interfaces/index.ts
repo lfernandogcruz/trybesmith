@@ -4,6 +4,13 @@ export interface IProduct {
   amount: string;
 }
 
+export interface IUser {
+  id?: number;
+  username: string;
+  classe: string;
+  level: number;
+  password: string;
+}
 // export interface Product extends IProduct {
 //   id: number;
 // }

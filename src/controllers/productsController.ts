@@ -8,7 +8,7 @@ const create = async (req: Request, res: Response) => {
   return res.status(201).json(newProduct);
 };
 
-const findAll = async (req: Request, res: Response) => {
+const findAll = async (_req: Request, res: Response) => {
   const products = await productsService.findAll();
   return res.status(200).json(products);
 };

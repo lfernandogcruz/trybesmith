@@ -1,5 +1,7 @@
 import express from 'express';
+
 import usersController from '../controllers/usersController';
+
 import newUserBodyValidation from '../middlewares/newUserBodyValidation';
 import tokenGenerator from '../middlewares/tokenGenerator';
 
